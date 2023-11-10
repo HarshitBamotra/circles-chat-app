@@ -1,0 +1,111 @@
+.sidebar{
+    width: 100%;
+    height: 100%;
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+    border-right: 2px solid #43BBEF;
+    font-family: 'Inter', sans-serif;
+}
+
+.addfriend{
+    flex: 2;
+    /* background-color: pink; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border-bottom: 3px solid #EE31A3;
+}
+.addfriend > div{
+    width: 90%;
+    color: white;
+    font-size: 16px;
+}
+.addfriend > input{
+    font-size: 16px;
+    height: 26px;
+    width: 90%;
+    margin: 0;
+    padding: 5px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+}
+.addfriend > button{
+    width: 40%;
+    height: 25px;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    border-radius: 5px;
+}
+.addfriend > button:hover{
+    cursor: pointer;
+}
+
+.friendlist{
+    flex: 10;
+    /* background-color: red; */
+    width: 100%;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+}
+
+.friendlist > div{
+    width: 100%;
+    min-height: 60px;
+    color: white;
+
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #43BBEF;
+}
+.friendlist > div:hover{
+    background-color: rgba(24, 24, 27, 0.62);
+    cursor: pointer;
+    color: #43BBEF;
+}
+
+.friendrequest{
+    flex: 1;
+    /* background-color: white; */
+    width: 100%;
+    border-top: 3px solid #EE31A3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 800;
+    color: white;
+}
+.friendrequest:hover{
+    background-color: rgba(24, 24, 27, 0.62);
+    cursor: pointer;
+}
+
+
+.popover-container{
+    width: 350px;
+    font-family: 'Inter', sans-serif;
+    background-color: #020114;
+    border-radius: 10px;
+    border: 1px solid #e8f906;
+    overflow: hidden !important;
+}
+.popover-item{
+    color: white;
+    height: 50px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #e8f906;
+}

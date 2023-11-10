@@ -1,0 +1,15 @@
+.main{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    background-color: #020114;
+}
+
+.sbar{
+    flex: 1;
+    height: 100%;
+}
+.carea{
+    flex: 3;
+    height: 100%;
+}
