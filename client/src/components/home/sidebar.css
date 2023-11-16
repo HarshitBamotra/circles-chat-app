@@ -69,9 +69,10 @@
     border-bottom: 1px solid #43BBEF;
 }
 .friendlist > div:hover{
-    background-color: rgba(24, 24, 27, 0.62);
+    /* background-color: rgba(24, 24, 27, 0.62); */
+    background-color: #202c33;
     cursor: pointer;
-    color: #43BBEF;
+    /* color: #43BBEF; */
 }
 
 .friendrequest{
@@ -105,7 +106,33 @@
     height: 50px;
     font-size: 20px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #e8f906;
+}
+.popover-text{
+    margin-left: 20px;
+}
+.popover-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-right: 20px;
+}
+
+.popover-buttons img{
+    width: 30px;
+    height: 30px;
+}
+.popover-buttons img:hover{
+    cursor: pointer;
+}
+
+.popover-norequest{
+    color: white;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

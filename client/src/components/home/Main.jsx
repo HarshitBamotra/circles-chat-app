@@ -9,18 +9,17 @@ const Main = ()=>{
     const [user, setUser] = useState({});
     const navigate = useNavigate();
     const [cookies, removeCookie] = useCookies([]);
+    const [friend, setFriend] = useState({});
     useEffect(()=>{
         const verifyCookie = async ()=>{
-            if(!cookies.token){
+            if(!cookies.token || cookies.token==='undefined'){
                 navigate("/auth");
             }
             const data = await axios.post("http://localhost:4000/",{},{withCredentials:true});
-            console.log(data);
             if(data.status===false){
                 removeCookie("token");
                 navigate("/auth")
             }
-            console.log(data.data.email);
             setUser({
                 email:data.data.email,
                 id:data.data.id,
@@ -30,16 +29,18 @@ const Main = ()=>{
         }
         verifyCookie();
     },[cookies, navigate, removeCookie]);
-    console.log(user);
-
+    // console.log(user);
     return(
         <div className="main">
             <div className="sbar">
-                <Sidebar props={user}></Sidebar>
+                <Sidebar user={user} setFriend={setFriend}></Sidebar>
             </div>
-            <div className="carea">
-                <Chatarea></Chatarea>
-            </div>
+            {friend?<div className="carea">
+                <Chatarea friend={friend} user={user}></Chatarea>
+            </div>:<></>}
+            {/* <div className="carea">
+                <Chatarea friend={friend}></Chatarea>
+            </div> */}
         </div>
     )
 }

@@ -18,7 +18,8 @@ const userSchema = new mongoose.Schema({
         chats:[
             {
                 sender:String,
-                content:String
+                content:String,
+                time:String
             }
         ]
     }],

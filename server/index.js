@@ -139,7 +139,36 @@ app.post("/acceptfriend", async(req,res)=>{
 })
 
 
-app.post("/chat")
+app.post("/chat", async(req,res)=>{
+    console.log(req.body);
+
+    const user1 = req.body.sender;
+    const user2 = req.body.receiver;
+    const message = req.body.message;
+    await User.updateOne(
+        {email:user1, "friends.email":user2},
+        {
+            $push:{
+                "friends.$.chats":{
+                    sender:user1,
+                    content:message
+                }
+            }
+        }
+    )
+    await User.updateOne(
+        {email:user2, "friends.email":user1},
+        {
+            $push:{
+                "friends.$.chats":{
+                    sender:user1,
+                    content:message
+                }
+            }
+        }
+    )
+    res.json("ooooo");
+})
 
 
 app.listen(port, ()=>{
